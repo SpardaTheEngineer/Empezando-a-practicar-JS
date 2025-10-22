@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DVD Arcoíris Móvil</title>
+<style>
+
+  body {
+
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+
+  }
+
+  #dvd {
+
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+  }
+
+  #logo {
+
+    position: absolute;
+    width: 300px;
+    height: auto;
+    /* Base de color para logo blanco */
+    filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(0deg) contrast(200%);
+    animation: arcoirisTotal 12s linear infinite;
+    display: block;
+
+  }
+
+  /* Animación arcoíris */
+  @keyframes arcoirisTotal {
+
+    0%   { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(0deg)   contrast(200%); }   /* rojo */
+    12%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(30deg)  contrast(200%); }   /* naranja */
+    24%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(60deg)  contrast(200%); }   /* amarillo */
+    36%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(120deg) contrast(200%); }   /* verde */
+    48%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(160deg) contrast(200%); }   /* verde-azulado */
+    60%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(200deg) contrast(200%); }   /* azul */
+    72%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(260deg) contrast(200%); }   /* violeta */
+    84%  { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(310deg) contrast(200%); }   /* magenta */
+    100% { filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(360deg) contrast(200%); }   /* vuelve al rojo */
+
+  }
+
+</style>
+</head>
+<body>
+
+  <div id="dvd">
+
+    <img id="logo" src="dvd.png" alt="Logo DVD">
+
+  </div>
+
+<script>
+
+let y=0;           
+let x=0;
+let controlY=1;  
+let controlX=1;  
+let velocidad=1;
+let intervalo=setInterval("mover()",5);
+
+function mover(){
+
+    if(controlX==1){ 
+
+        x+=velocidad; 
+
+    } else { 
+
+        x-=velocidad; 
+
+    }
+
+    if(x<=0){ 
+
+        controlX=1; x=0; 
+    
+    } else if(x>=document.getElementById("dvd").offsetWidth-300){
+
+        controlX=0; x=document.getElementById("dvd").offsetWidth-300;
+
+    }
+
+    if(controlY==1){ 
+
+        y+=velocidad; 
+
+    } else { 
+        
+        y-=velocidad; 
+    
+    }
+
+    if(y<=0){ 
+        
+        controlY=1; y=0; 
+    
+    } else if(y>=document.getElementById("dvd").offsetHeight-230){
+
+        controlY=0; y=document.getElementById("dvd").offsetHeight-230;
+
+    }
+
+    document.getElementById("logo").style.left=String(x)+"px";
+    document.getElementById("logo").style.top=String(y)+"px";
+
+}
+</script>
+
+</body>
+</html>
