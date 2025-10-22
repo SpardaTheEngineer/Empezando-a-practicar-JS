@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+
+            background-image: url("laberinto.png");
+            background-size: 170em 105em;
+            background-repeat: no-repeat;
+            
+
+        }
+
+        img {
+
+        width: 85px;
+        height: 60px;
+        position: absolute;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<img id="monigote" src="monigote.png">
+
+<script>
+    window.addEventListener("load",()=>{
+
+    let monigote = document.getElementById("monigote");
+
+    document.addEventListener("mousemove", (event) => {
+        monigote.style.top = event.clientY + "px";
+        monigote.style.left = event.clientX + "px";
+
+
+        })
+
+    }) 
+
+    
+
+
+</script>
+
+</body>
+</html>
