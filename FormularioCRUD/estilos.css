@@ -1,0 +1,29 @@
+
+fieldset {
+
+    border: 3px solid black;
+    border-radius: 10px;
+
+}
+
+#enviar {
+
+    width: 200px;
+    height: 20px;
+
+}
+
+#buscar {
+
+    background-color: rgb(204, 204, 204);
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 40px;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 10px;
+
+
+}
