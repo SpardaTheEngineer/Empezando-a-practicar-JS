@@ -1,0 +1,9 @@
+{
+  "posts": [
+    { "id": 1, "title": "Primer Post", "author": "Juan" },
+    { "id": 2, "title": "Segundo Post", "author": "Maria" }
+  ],
+  "comments": [
+    { "id": 1, "body": "Este es un comentario", "postId": 1 }
+  ]
+}
