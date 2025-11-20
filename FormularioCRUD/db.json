@@ -1,9 +1,25 @@
 {
-  "posts": [
-    { "id": 1, "title": "Primer Post", "author": "Juan" },
-    { "id": 2, "title": "Segundo Post", "author": "Maria" }
-  ],
-  "comments": [
-    { "id": 1, "body": "Este es un comentario", "postId": 1 }
+  "usuarios": [
+    {
+      "id": "3f24",
+      "nombre": "Alberto",
+      "apellidos": "Vicente Villa",
+      "dni": "49195678N",
+      "email": "albertico98@gmail.com"
+    },
+    {
+      "id": "95ef",
+      "nombre": "JuanP",
+      "apellidos": "Lopez Luna",
+      "dni": "6969696C",
+      "email": "juanp@hotmail.com"
+    },
+    {
+      "id": "de65",
+      "nombre": "mario",
+      "apellidos": "mario",
+      "dni": "1212222P",
+      "email": "mario@mario.com"
+    }
   ]
 }
