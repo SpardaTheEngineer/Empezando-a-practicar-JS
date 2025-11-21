@@ -3,15 +3,17 @@ window.addEventListener('load', () => {
 
     let formulario = document.getElementById("formulario");
 
-    let nombre = document.getElementById("nombre");
+   
 
-    let apellidos = document.getElementById("apellidos");
+    formulario.addEventListener('submit', function(event) {
 
-    let dni = document.getElementById("dni");
- 
-    let email = document.getElementById("email");
+        event.preventDefault();
+        validarFormulario(); 
+    
+    });
     
 
+<<<<<<< HEAD
     formulario.addEventListener('submit', (e) => {
 
 
@@ -25,3 +27,59 @@ window.addEventListener('load', () => {
 
 
 });
+=======
+    function validarFormulario() {                
+            
+        let nombre = document.getElementById("nombre").value.trim();
+
+        let apellidos = document.getElementById("apellidos").value.trim();
+
+        let cdni = document.getElementById("dni");
+
+        let dni = cdni.value.trim().toUpperCase();
+ 
+        let email = document.getElementById("email").value.trim();
+
+        let usu = {
+
+            nombre: nombre,
+            apellidos: apellidos,
+            dni: dni,
+            email: email
+
+        };
+
+        guardarUsuario(usu);
+
+    }   
+
+    function guardarUsuario(usu) {
+
+        fetch("http://localhost:3000/usuarios", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usu)
+        })
+        .then(res => {
+
+            return res.json();
+
+        })
+        .then(data => {
+
+            alert("Uusario guardao");
+
+        })
+        .catch(err => {
+
+            console.error("Que haces bobo", err)
+
+        });
+
+     }
+
+
+});
+>>>>>>> 302e9c758895deeb7ac2d083ec0d2a38bf931c33
