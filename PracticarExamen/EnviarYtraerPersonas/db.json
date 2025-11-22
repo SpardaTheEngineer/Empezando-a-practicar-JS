@@ -1,0 +1,32 @@
+{
+  "personas": [
+    {
+      "id": "1",
+      "nombre": "Manolito",
+      "apellidos": "López",
+      "dni": "12345678A",
+      "email": "joputa@cabron.com"
+    },
+    {
+      "id": "2",
+      "nombre": "Alberto",
+      "apellidos": "Vicente",
+      "dni": "87654321B",
+      "email": "albertito98@exayoquese.com"
+    },
+    {
+      "id": "2638",
+      "nombre": "Pepe",
+      "apellidos": "Lopez",
+      "dni": "69696969C",
+      "email": "pp@gmail.com"
+    },
+    {
+      "id": "5a8c",
+      "nombre": "Antonio",
+      "apellidos": "Perez",
+      "dni": "90909800F",
+      "email": "Anton@elloco.com"
+    }
+  ]
+}

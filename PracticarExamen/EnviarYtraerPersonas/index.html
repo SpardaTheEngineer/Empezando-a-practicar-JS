@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <script src="main.js"></script>
+   
+    <div id="contenedor" style="display: block;">
+
+    <form id="formulario" method="post" >
+
+    <fieldset>
+
+    <legend>Formulario clientes guapos</legend>
+
+    <br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" minlength="2" maxlength="10" required><br><br>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" name="apellidos" maxlength="25" required><br><br>
+
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni" pattern="^[0-9]{8}[A-Z]$" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button id="enviarUsuario" type="submit">Enviar</button>
+    <button id="obtenerUsuarios" type="button">Traer usuarios</button>
+
+    </fieldset>
+
+    </form>
+
+    </div>
+
+    <div id="tabla">
+
+
+    </div>
+
+    </body>
+
+</body>
+</html>

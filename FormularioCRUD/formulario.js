@@ -13,21 +13,6 @@ window.addEventListener('load', () => {
     });
     
 
-<<<<<<< HEAD
-    formulario.addEventListener('submit', (e) => {
-
-
-        
-
-
-
-    });
-
-
-
-
-});
-=======
     function validarFormulario() {                
             
         let nombre = document.getElementById("nombre").value.trim();
@@ -53,7 +38,7 @@ window.addEventListener('load', () => {
 
     }   
 
-    function guardarUsuario(usu) {
+     function guardarUsuario(usu) {
 
         fetch("http://localhost:3000/usuarios", {
             method: 'POST',
@@ -82,4 +67,3 @@ window.addEventListener('load', () => {
 
 
 });
->>>>>>> 302e9c758895deeb7ac2d083ec0d2a38bf931c33
