@@ -68,24 +68,7 @@ window.addEventListener("load", () => {
     
     });
 
-    //Boton para eliminar productos
-
-    let botonEliminar = document.createElement("button");
-    botonEliminar.innerHTML = "Elimina un producto";
-
-    añadirProducto.appendChild(botonEliminar);
-
-    botonEliminar.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        let nombreProducto = prompt("Por favor, introduce el nombre del producto a eliminar");
-
-        eliminarProducto(nombreProducto);
-
-    });
-
-
+   
     //Formulario para enviar productos
     formulario.addEventListener("submit" , (e) => {
 
@@ -130,14 +113,25 @@ window.addEventListener("load", () => {
                 
                 let tr = document.createElement("tr");
 
+             
                 tr.innerHTML = `
                 
-                    <td id="${producto.nombre}">${producto.nombre}</td>
+                    <td>${producto.nombre}</td>
                     <td>${producto.precio}</td>
                     <td>${producto.categoria}</td>
                     <td>${producto.stock}</td>
+                    <td><button class="btn-eliminar"">Eliminar</button></td>
                                 
                 `;
+
+                let botonEliminar = tr.querySelector(".btn-eliminar");
+                botonEliminar.addEventListener("click", (e) => {
+
+                e.preventDefault();
+                eliminarProducto(producto.id);
+                tr.remove();
+                
+                });
 
                 tabla.appendChild(tr);
 
@@ -153,7 +147,6 @@ window.addEventListener("load", () => {
                     `;
 
         }
-
 
     }
 
@@ -195,11 +188,11 @@ window.addEventListener("load", () => {
 
     }
 
-    async function eliminarProducto(nombreProducto) {
+    async function eliminarProducto(id) {
 
          try {
             
-            let respuesta = await fetch(`http://localhost:3000/productos/${nombreProducto}`, {
+            let respuesta = await fetch(`http://localhost:3000/productos/${id}`, {
 
                 method: 'DELETE',
 
