@@ -40,7 +40,7 @@ traerFotos();
 
                     fotico.style.transform = "scale(1)";
 
-                }, 3000);
+                }, 900);
 
             })
 

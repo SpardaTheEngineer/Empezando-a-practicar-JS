@@ -1,0 +1,39 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Camisa Azul",
+      "precio": 29.99,
+      "categoria": "Ropa",
+      "stock": 50
+    },
+    {
+      "id": "2",
+      "nombre": "Pantalones",
+      "precio": 19.99,
+      "categoria": "Ropa",
+      "stock": 25
+    },
+    {
+      "id": "3",
+      "nombre": "Zapatos",
+      "precio": "12",
+      "categoria": "Ropa",
+      "stock": "27"
+    },
+    {
+      "id": "2afd",
+      "nombre": "Camisa",
+      "precio": "20",
+      "categoria": "Ropa",
+      "stock": "10"
+    },
+    {
+      "id": "c4f5",
+      "nombre": "Isidro Gamos Alcura",
+      "precio": "69",
+      "categoria": "Humano",
+      "stock": "1"
+    }
+  ]
+}
