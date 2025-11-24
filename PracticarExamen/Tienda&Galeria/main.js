@@ -188,6 +188,42 @@ window.addEventListener("load", () => {
 
     }
 
+    // function enviarProducto(producto) {
+
+    //     fetch(url, {
+    //
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(producto)
+    //
+    //     })
+    //     .then(respuesta => {
+    //    
+    //         if (!respuesta.ok) {
+    //             throw new Error("Error al enviar el producto");
+    //         }
+    //
+    //         return respuesta.json();
+    //     })
+    //     .then(productoEnviado => {
+    //
+    //         console.log("Producto enviado:", productoEnviado);
+    //         alert("Producto Enviado");
+    //     })
+    //     .catch(error => {
+    //
+    //         console.error("Error al enviar producto:", error);
+    //         añadirProducto.innerHTML = `
+    //             <tr>
+    //                 <td>Ha ocurrido un error al enviar el producto.</td>
+    //             </tr>
+    //             `;
+    //     });
+    //     }
+        
+
     async function eliminarProducto(id) {
 
          try {
