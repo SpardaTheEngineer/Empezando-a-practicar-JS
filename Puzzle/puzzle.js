@@ -66,7 +66,6 @@ window.addEventListener("load", () => {
       tableroTrozos.style.display = "flex";
       tableroTrozos.style.flexWrap = "wrap";
 
-
       for (let i = 0; i < 9; i++) {
 
         let elemento = document.createElement("div");
@@ -75,7 +74,10 @@ window.addEventListener("load", () => {
         elemento.style.width = "150px";
         elemento.style.height = "110px";
 
+        elemento.style.boxSizing = "border-box";
 
+
+//-----------Codigo de internet  para partir la imagen en trozos------------------
         elemento.style.backgroundImage = `url(${imagen})`;
 
         const fila = Math.floor(i / 3); // 0,1,2
@@ -86,7 +88,7 @@ window.addEventListener("load", () => {
         const y = -fila * 110; // 0, -100, -200
 
         elemento.style.backgroundPosition = `${x}px ${y}px`;
-
+//---------------------------------------------------------------------------------
         // que se pueda arrastrar
         elemento.draggable = true;
 

@@ -27,6 +27,20 @@
       "apellidos": "Perez",
       "dni": "90909800F",
       "email": "Anton@elloco.com"
+    },
+    {
+      "id": "32f2",
+      "nombre": "Pepe",
+      "apellidos": "Perez",
+      "dni": "69696969C",
+      "email": "pepe@pepe.com"
+    },
+    {
+      "id": "3329",
+      "nombre": "Minerva",
+      "apellidos": "Lopez",
+      "dni": "48658215N",
+      "email": "min@min.com"
     }
   ]
 }

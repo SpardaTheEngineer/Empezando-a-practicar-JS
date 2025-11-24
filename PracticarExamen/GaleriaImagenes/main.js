@@ -6,13 +6,11 @@ let imagenes = [];
 
 traerFotos();
 
-
-
     async function traerFotos() {
         console.log("Entra");
         try {
 
-            let respuesta = await fetch("https://picsum.photos/v2/list?page=2&limit=10");
+            let respuesta = await fetch("https://picsum.photos/v2/list?page=2&limit=18");
 
             if (!respuesta.ok) {
 
@@ -28,19 +26,21 @@ traerFotos();
                 
                 let fotico = document.createElement("img");
 
-                fotico.src = `https://picsum.photos/id/${imagen.id}/150/150`;
+                fotico.style.margin = "20px";
+
+                 fotico.src = `https://picsum.photos/id/${imagen.id}/150/150`;
                 fotico.alt = imagen.title;
 
                 fotico.addEventListener("mouseenter", () => {
 
-                fotico.style.transform = "scale(2)";
+                fotico.style.transform = "scale(1.2)";
                 fotico.style.transition = "transform 0.3s";
 
                 setTimeout(() => {
 
                     fotico.style.transform = "scale(1)";
 
-                }, 3000);
+                }, 2000);
 
             })
 
