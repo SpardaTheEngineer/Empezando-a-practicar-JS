@@ -1,5 +1,15 @@
+window.addEventListener("load", () => {
+
 let editando = false;
 
+let editarrr = document.getElementsByClassName("editar");
+
+    editarrr.addEventListener("click", (e) => {
+
+        e.preventDefault();
+        transformarEnEditable(nodo);
+
+    });
 
 
 function transformarEnEditable(nodo) {
@@ -16,13 +26,13 @@ function transformarEnEditable(nodo) {
 
         let nodosEnTr = nodoTr.getElementsByTagName('td');
 
-        let alimento = nodosEnTr[0].textContent; var calorias = nodosEnTr[1].textContent;
+        let alimento = nodosEnTr[0].textContent; let calorias = nodosEnTr[1].textContent;
 
-        let grasas = nodosEnTr[2].textContent; var proteina = nodosEnTr[3].textContent;
+        let grasas = nodosEnTr[2].textContent; let proteina = nodosEnTr[3].textContent;
 
-        let carbohidratos = nodosEnTr[4].textContent; var opciones = nodosEnTr[5].textContent;
+        let carbohidratos = nodosEnTr[4].textContent; let opciones = nodosEnTr[5].textContent;
 
-        let nuevoCodigoHtml = '<td><input type="text" name="alimento" id="alimento" value="' + alimento + '" size="10"></td>' +
+        let nuevoCodigoHtml = ' <td><input type="text" name="alimento" id="alimento" value="' + alimento + '" size="10"></td>' +
 
             '<td><input type="text" name="calorias" id="calorias" value="' + calorias + '" size="5"</td>' +
 
@@ -48,6 +58,7 @@ function transformarEnEditable(nodo) {
     }
 
     else {
+
         alert('Solo se puede editar una línea. Recargue la página para poder editar otra');
 
     }
@@ -103,3 +114,5 @@ function anular() {
     window.location.reload();
 
 }
+
+});

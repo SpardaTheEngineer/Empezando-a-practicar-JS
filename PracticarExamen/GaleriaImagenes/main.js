@@ -40,7 +40,11 @@ traerFotos();
 
                     fotico.style.transform = "scale(1)";
 
+<<<<<<< HEAD
                 }, 2000);
+=======
+                }, 900);
+>>>>>>> 45fa91bc367b98b4400581c29bcb21f3bd426296
 
             })
 

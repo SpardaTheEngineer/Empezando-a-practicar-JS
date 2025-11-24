@@ -1,0 +1,34 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Teclado",
+      "precio": 20
+    },
+    {
+      "id": "2",
+      "nombre": "Ratón",
+      "precio": 15
+    },
+    {
+      "id": "8c73",
+      "nombre": "Alfombrilla",
+      "precio": "69"
+    },
+    {
+      "id": "f9a8",
+      "nombre": "Procesador",
+      "precio": "250"
+    },
+    {
+      "id": "57fc",
+      "nombre": "Tarjeta Grafica",
+      "precio": "479"
+    },
+    {
+      "id": "1de1",
+      "nombre": "Manolito",
+      "precio": "0"
+    }
+  ]
+}
