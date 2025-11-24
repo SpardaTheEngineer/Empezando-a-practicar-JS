@@ -1,143 +1,60 @@
 {
-  "productos": [{
-    "id": 1,
-    "nombre": "Portátil Lenovo ThinkPad E15",
-    "precio": 899.99,
-    "categoria": "Portátiles",
-    "stock": 12
-  },
-  {
-    "id": 2,
-    "nombre": "Monitor LG UltraGear 27\" 144Hz",
-    "precio": 289.90,
-    "categoria": "Monitores",
-    "stock": 7
-  },
-  {
-    "id": 3,
-    "nombre": "Teclado mecánico Logitech G Pro",
-    "precio": 129.99,
-    "categoria": "Periféricos",
-    "stock": 25
-  },
-  {
-    "id": 4,
-    "nombre": "Ratón Razer DeathAdder V2",
-    "precio": 69.99,
-    "categoria": "Periféricos",
-    "stock": 40
-  },
-  {
-    "id": 5,
-    "nombre": "Disco SSD Samsung 970 EVO 1TB",
-    "precio": 109.99,
-    "categoria": "Almacenamiento",
-    "stock": 18
-  },
-  {
-    "id": 6,
-    "nombre": "Tarjeta gráfica NVIDIA RTX 4070",
-    "precio": 649.00,
-    "categoria": "Componentes",
-    "stock": 5
-  },
-  {
-    "id": 7,
-    "nombre": "Placa base ASUS ROG Strix B550-F",
-    "precio": 189.99,
-    "categoria": "Componentes",
-    "stock": 9
-  },
-  {
-    "id": 8,
-    "nombre": "Memoria RAM Kingston Fury 16GB DDR4",
-    "precio": 59.99,
-    "categoria": "Componentes",
-    "stock": 30
-  },
-  {
-    "id": 9,
-    "nombre": "Fuente de alimentación Corsair 650W",
-    "precio": 84.99,
-    "categoria": "Componentes",
-    "stock": 14
-  },
-  {
-    "id": 10,
-    "nombre": "Caja PC NZXT H510",
-    "precio": 89.99,
-    "categoria": "Componentes",
-    "stock": 11
-  },
-  {
-    "id": 11,
-    "nombre": "Impresora HP LaserJet Pro M404dn",
-    "precio": 219.00,
-    "categoria": "Impresoras",
-    "stock": 6
-  },
-  {
-    "id": 12,
-    "nombre": "Router ASUS RT-AX55 WiFi 6",
-    "precio": 99.99,
-    "categoria": "Red",
-    "stock": 20
-  },
-  {
-    "id": 13,
-    "nombre": "Auriculares HyperX Cloud II",
-    "precio": 89.99,
-    "categoria": "Audio",
-    "stock": 15
-  },
-  {
-    "id": 14,
-    "nombre": "Tablet Samsung Galaxy Tab A8",
-    "precio": 239.00,
-    "categoria": "Tablets",
-    "stock": 10
-  },
-  {
-    "id": 15,
-    "nombre": "Cámara web Logitech C920 HD Pro",
-    "precio": 69.99,
-    "categoria": "Periféricos",
-    "stock": 22
-  },
-  {
-    "id": 16,
-    "nombre": "Switch de red TP-Link 8 puertos Gigabit",
-    "precio": 26.99,
-    "categoria": "Red",
-    "stock": 35
-  },
-  {
-    "id": 17,
-    "nombre": "USB Sandisk Ultra 64GB",
-    "precio": 11.99,
-    "categoria": "Almacenamiento",
-    "stock": 50
-  },
-  {
-    "id": 18,
-    "nombre": "Sistema operativo Windows 11 Pro",
-    "precio": 149.00,
-    "categoria": "Software",
-    "stock": 100
-  },
-  {
-    "id": 19,
-    "nombre": "Silla gaming Corsair T3 Rush",
-    "precio": 249.00,
-    "categoria": "Mobiliario",
-    "stock": 8
-  },
-  {
-    "id": 20,
-    "nombre": "Power Bank Xiaomi 20000mAh",
-    "precio": 34.99,
-    "categoria": "Accesorios",
-    "stock": 27
-  }
-]
+  "productos": [
+    {
+      "id": "10",
+      "nombre": "Caja PC NZXT H510",
+      "precio": 89.99,
+      "categoria": "Componentes",
+      "stock": 11
+    },
+    {
+      "id": "11",
+      "nombre": "Impresora HP LaserJet Pro M404dn",
+      "precio": 219,
+      "categoria": "Impresoras",
+      "stock": 6
+    },
+    {
+      "id": "12",
+      "nombre": "Router ASUS RT-AX55 WiFi 6",
+      "precio": 99.99,
+      "categoria": "Red",
+      "stock": 20
+    },
+    {
+      "id": "13",
+      "nombre": "Auriculares HyperX Cloud II",
+      "precio": 89.99,
+      "categoria": "Audio",
+      "stock": 15
+    },
+    {
+      "id": "15",
+      "nombre": "Cámara web Logitech C920 HD Pro",
+      "precio": 69.99,
+      "categoria": "Periféricos",
+      "stock": 22
+    },
+    {
+      "id": "16",
+      "nombre": "Switch de red TP-Link 8 puertos Gigabit",
+      "precio": 26.99,
+      "categoria": "Red",
+      "stock": 35
+    },
+    {
+      "id": "17",
+      "nombre": "USB Sandisk Ultra 64GB",
+      "precio": 11.99,
+      "categoria": "Almacenamiento",
+      "stock": 50
+    },
+    {
+      "id": "18",
+      "nombre": "Sistema operativo Windows 11 Pro",
+      "precio": 149,
+      "categoria": "Software",
+      "stock": 100
+    }
+  ]
 }

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table,td{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        td{
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /* OBJETO DE USUARIO QUE SE ENVIARÁ EN LOS FETCH */
+        function Usuario(nombre, apellido, edad){
+            this.nombre = nombre
+            this.apellido = apellido
+            this.edad = edad
+        }
+
+
+
+        /* FETCH GET */
+        let botonGET = document.createElement("button")
+        botonGET.textContent="GET"
+        document.body.appendChild(botonGET)
+
+        botonGET.addEventListener("click", function(ev){
+            let nombre = "Mateo"
+            fetch(`http://localhost:3000/usuarios/?nombre=${nombre}`,{
+                method:"GET" //No hace falta ponerlo
+            })
+            .then((respuesta) => {
+                if (!respuesta.ok) {
+                    throw new Error(`Error HTTP: ${respuesta.status}`)
+                }
+
+                console.log("RECIBIR GET")
+                return respuesta.json();
+            })
+            .then((dato) => {
+
+                //Por defecto Si no lo encuentra devuelve un array vacio, no returna Error
+                if (dato.length === 0) {
+                    throw new Error("Usuario no encontrado");
+                }
+
+                console.log(dato)
+            })
+            .catch((error) => console.log(error.message))
+        })
+        
+
+
+        /* FETCH POST */
+        let botonPOST = document.createElement("button")
+        botonPOST.textContent="POST"
+        document.body.appendChild(botonPOST)
+
+        botonPOST.addEventListener("click", function(ev){
+
+            let usuarioNuevo = new Usuario("Paco", "Perez", "34")
+            /* IMPORTANTE HAY QUE PASAR EL OBJETO JS A OBJETO JSON */
+            /* Esto se hace dentro del fetch pero tambien se puede hacer fuera (JSON.stringify(objeto)) */
+
+            fetch("http://localhost:3000/usuarios",{
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json" // Indicar que se envía JSON
+                },
+                body: JSON.stringify(usuarioNuevo) // Enviar el objeto JSON
+            })
+            .then((respuesta) => {
+                if (!respuesta.ok) {
+                    throw new Error(`Error HTTP: ${respuesta.status}`)
+                }
+
+                console.log("ENVIAR POST")
+                return respuesta.json();
+            })
+            .then((dato) => console.log(dato))
+            .catch((error) => console.log(error.message)) 
+
+        })
+
+
+
+        /* FETCH DELETE */
+
+        //Como solo se puede eliminar a partir de su id tendremos que hacer un fetch GET para obtener el id
+
+        let botonDELETE = document.createElement("button")
+        botonDELETE.textContent="DELETE"
+        document.body.appendChild(botonDELETE)
+
+        botonDELETE.addEventListener("click", function(ev){
+
+            /* Obtenemos el id de Paco */
+            //Usuario que se crea arriba en el POST
+            let nombre = "Paco"
+
+            /* Se lanza un FETCH GET al nombre "Paco" y ser returna el id que se obtendrá mediante una PROMESA */
+            function obtenerId(nombreUsuario){
+
+                /* IMPORTANTE EL RETURN DELANTE DEL FETCH */
+                return fetch(`http://localhost:3000/usuarios/?nombre=${nombreUsuario}`,{
+                    method:"GET" //No hace falta ponerlo
+                })
+                .then((respuesta) => {
+                    if (!respuesta.ok) {
+                        throw new Error(`Error HTTP: ${respuesta.status}`)
+                    }
+
+                    console.log("RECIBIR GET")
+                    return respuesta.json();
+                })
+                .then((dato) => {
+
+                    //Por defecto Si no lo encuentra devuelve un array vacio, no returna Error
+                    if (dato.length === 0) {
+                        throw new Error("Usuario no encontrado");
+                    }
+
+                    console.log(dato[0].id)
+
+                    //Importante que se returne el id del usuario.
+                    //Ademas se recibe un array de objetos, pero solo hay un objeto
+                    return dato[0].id
+
+                    
+                })
+                .catch((error) => console.log(error.message))
+            }
+
+            /* Usamos la funcion obtenerId que devuelve una promesa que tras resolverse devuelve el id */
+            /* Este id lo podremos usar para realizar el DELETE */
+            obtenerId(nombre).then((id)=>{
+
+                if(id){
+
+                    console.log("El id es: "+id)
+
+                    /* LANZAMOS EL FETCH DELETE */
+                    fetch(`http://localhost:3000/usuarios/${id}`,{
+                        method:"DELETE"
+                    })
+                    .then((respuesta) => {
+                        if (!respuesta.ok) {
+                            throw new Error(`Error HTTP: ${respuesta.status}`)
+                        }
+
+                        console.log("RECIBIR GET")
+                        return respuesta.json(); //Usuario eliminado
+                    })
+                    .then((dato) => {
+                        console.log("ELIMINACION DELETE")
+                        console.log(dato)
+                    })
+                    .catch((error) => console.log(error.message))
+                }
+
+
+            })
+            .catch((error)=>{
+                console.log("El error es: "+error)
+            })
+
+
+
+        })
+
+
+
+        /* FETCH PUT */
+        let botonPUT = document.createElement("button")
+        botonPUT.textContent="PUT"
+        document.body.appendChild(botonPUT)
+
+        botonPUT.addEventListener("click", function(ev){
+            let id = "f83c";
+
+            fetch(`http://localhost:3000/usuarios/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "id": id,
+                    "nombre": "nombreNuevo", 
+                    "apellido": "apellidoNuevo",
+                    "edad": "55"
+                })
+            })
+                .then((respuesta) => {
+                if (!respuesta.ok) {
+                    throw new Error(`Error HTTP: ${respuesta.status}`)
+                }
+        
+                return respuesta.json(); 
+
+            })
+            .then((dato) => console.log(dato)) //Se muestra el objeto modificado
+            .catch((error) => console.log(error.message))
+            
+        })
+
+    
+
+
+
+            
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

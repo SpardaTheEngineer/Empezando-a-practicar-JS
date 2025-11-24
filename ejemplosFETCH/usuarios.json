@@ -1,0 +1,52 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Juan Perez",
+      "apellido": "Gimenez",
+      "edad": "14"
+    },
+    {
+      "id": "2",
+      "nombre": "Lucia",
+      "apellido": "Martinez",
+      "edad": "16"
+    },
+    {
+      "id": "3",
+      "nombre": "Carlos",
+      "apellido": "Rodriguez",
+      "edad": "15"
+    },
+    {
+      "id": "4",
+      "nombre": "Ana",
+      "apellido": "Fernandez",
+      "edad": "17"
+    },
+    {
+      "id": "5",
+      "nombre": "Mateo",
+      "apellido": "Lopez",
+      "edad": "13"
+    },
+    {
+      "id": "6",
+      "nombre": "Sofia",
+      "apellido": "Ramirez",
+      "edad": "14"
+    },
+    {
+      "id": "7",
+      "nombre": "Diego",
+      "apellido": "Torres",
+      "edad": "16"
+    },
+    {
+      "id": "f83c",
+      "nombre": "nombreNuevo",
+      "apellido": "apellidoNuevo",
+      "edad": "55"
+    }
+  ]
+}

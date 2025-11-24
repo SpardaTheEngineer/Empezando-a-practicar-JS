@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table,th, td, tr{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        td,th{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script>
+        
+        let lista_usuarios =[
+                {
+                    "nombre": "Leanne Graham",
+                    "apellidos": "Bret",
+                    "dni": "11111",
+                    "edad": 18,
+                    "aficiones": { 
+                                    "pelota": ["futbol","tenis","padel"],
+                                    "pesas": "gym",
+                                    "ruedas": ["ciclismo", "motocros"]
+                                }
+                },
+                {
+                    "nombre": "Ervin Howell",
+                    "apellidos": "Antonette",
+                    "dni": "22222",
+                    "edad": 20,
+                    "aficiones": ["senderismo","natación"]
+                },
+                {
+                    "nombre": "Clementine Bauch",
+                    "apellidos": "Samantha",
+                    "dni": "33333",
+                    "edad": 17,
+                    "aficiones": ["cine","gastronomía"]
+                },
+                {
+                    "nombre": "Patricia Lebsack",
+                    "apellidos": "Karianne",
+                    "dni": "44444",
+                    "edad": 23
+                    
+                },
+                {
+                    "nombre": "Chelsey Dietrich",
+                    "apellidos": "Kamren",
+                    "dni": "55555",
+                    "edad": 16,
+                    "aficiones": "navegación"
+                },
+                {
+                    "nombre": "Mrs. Dennis Schulist",
+                    "apellidos": "Leopoldo_Corkery",
+                    "dni": "66666",
+                    "edad": 18
+                }
+        ];
+        
+
+
+        function mostrarDatos(objeto){
+
+            let tabla = document.createElement("table")
+            tabla.id="latabla"
+            document.body.appendChild(tabla)
+
+            /* Titulos */
+            let fila = document.createElement("tr")
+            tabla.appendChild(fila)
+
+            for (const campo in objeto[0]) {
+                let columna = document.createElement("td")
+                fila.appendChild(columna)
+
+                columna.textContent=campo
+            }
+
+
+            /* Valores */
+            for (const usuario of objeto) {
+                let fila = document.createElement("tr")
+                tabla.appendChild(fila)
+                
+                for (const campo in usuario) {
+
+                    let columna = document.createElement("td")
+                    fila.appendChild(columna)
+
+                    if(usuario[campo] instanceof Object && !(usuario[campo] instanceof Array)){
+
+                        for (const elemento in usuario[campo]) {
+
+                            
+                            columna.textContent = columna.textContent + (usuario[campo][elemento])+" "
+
+                        }
+
+                    }else{
+                        columna.textContent=usuario[campo]
+                    }
+
+                    
+                }
+                
+            }
+
+
+
+        }
+
+
+
+        function ordenar(objeto){
+
+            document.addEventListener("keydown", function(ev){
+                ev.preventDefault()
+
+                
+
+                if(ev.key=="F1"){
+                    objeto.sort((a,b)=> a.nombre.localeCompare(b.nombre))
+                    let tabla = document.getElementById("latabla")
+                if(tabla){
+                    tabla.remove()
+                }
+                    mostrarDatos(objeto)
+                }else if(ev.key == "F3"){
+                    objeto.sort((a,b)=> a.apellidos.localeCompare(b.apellidos))
+                    let tabla = document.getElementById("latabla")
+                if(tabla){
+                    tabla.remove()
+                }
+                    mostrarDatos(objeto)
+                }
+            })
+
+        }
+
+        
+
+
+
+
+        window.addEventListener("load", function(ev){
+
+            mostrarDatos(lista_usuarios)
+
+            ordenar(lista_usuarios)
+
+
+        })
+
+
+        
+        
+        
+
+
+
+
+        
+
+
+
+        
+    </script>
+</body>
+</html>

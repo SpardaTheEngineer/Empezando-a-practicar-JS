@@ -28,7 +28,7 @@ traerFotos();
 
                 fotico.style.margin = "20px";
 
-                 fotico.src = `https://picsum.photos/id/${imagen.id}/150/150`;
+                fotico.src = `https://picsum.photos/id/${imagen.id}/150/150`;
                 fotico.alt = imagen.title;
 
                 fotico.addEventListener("mouseenter", () => {
@@ -40,11 +40,7 @@ traerFotos();
 
                     fotico.style.transform = "scale(1)";
 
-<<<<<<< HEAD
-                }, 2000);
-=======
                 }, 900);
->>>>>>> 45fa91bc367b98b4400581c29bcb21f3bd426296
 
             })
 
