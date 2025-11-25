@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" meta charset="UTF-8">
+	<title> Examen con fotos y tablas </title>
+
+	<style>
+		.ocultar {
+			display: none;
+		}
+
+		.fotos {
+			/* defino una clase para cambiar el tamaño de las fotos */
+			width: 100px;
+			height: 100px;
+		}
+
+		.amplia {
+			/* defino una clase para cambiar el tamaño de las fotos ampliadas*/
+			width: 500px;
+			height: 500px;
+		}
+
+		.recolocar {
+			/* defino una clase para recolocar el div de la foto ampliada */
+			position: fixed;
+			top: 50px;
+			right: 30px;
+		}
+
+		table {
+
+			border: 2px solid black;
+
+		}
+
+		tr td {
+
+			border: 2px solid black;
+			padding: 25px;
+
+		}
+	</style>
+
+
+	<script type="text/javascript">
+
+
+		let listaFotos = [
+			{
+				"nombre": "FB_IMG_1685577146004",
+				"tipo": "jpg",
+				"tamanno": "95.477",
+				"tematica": ["Web", "Programacion"]
+			},
+			{
+				"nombre": "FB_IMG_1676156609518",
+				"tipo": "jpg",
+				"tamanno": "22.089",
+				"tematica": "Programacion"
+			},
+			{
+				"nombre": "FB_IMG_1667318456231",
+				"tipo": "jpg",
+				"tamanno": "83.212",
+				"tematica": "Programacion"
+			},
+			{
+				"nombre": "FB_IMG_1678917723620",
+				"tipo": "jpg",
+				"tamanno": "45.624",
+				"tematica": ["Web", "programacion"]
+			},
+			{
+				"nombre": "FB_IMG_1699051552872",
+				"tipo": "jpg",
+				"tamanno": "63.303",
+				"tematica": "Programacion"
+			},
+			{
+				"nombre": "FB_IMG_1645211597935",
+				"tipo": "jpg",
+				"tamanno": "74.104",
+				"tematica": ["Web", "programacion"]
+			}
+		];
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+
+<body>
+	<div id="destino"> </div> <!-- Aquí pondré la tabla -->
+	</div>
+
+	<div id="ampliada"> </div> <!-- Aquí pondré las fotos ampliadas que saldrán en el lado derecho -->
+	</div>
+
+	<br />
+	<br />
+	<input type="button" value="Enviar al servidor las seleccionadas" name="boton">
+
+	<br />
+	<br />
+	<p id="p"> Pulsa F1 para ordenar por nombre las fotos </p>
+
+	<dialog id="size" style="position:absolute; margin:0;"></dialog>
+	<!-- Diálogo que mostrará el tamaño de la foto al pasar el ratón por encima -->
+
+
+	<script>
+
+		window.addEventListener("load", ev => {
+
+			let destino = document.getElementById("destino");
+
+			let texto = document.createElement("h1");
+
+			texto.innerHTML = "Fotos disponibles";
+
+			destino.appendChild(texto);
+
+			let tabla = document.createElement("table");
+
+			tabla.innerHTML = `
+			
+			 <table> 
+               <thead>
+               
+               </thead>
+            </table>
+			
+			`;
+
+			/* let boton = document.querySelectorAll("input");
+
+			boton.addEventListener("click", (e) => {
+
+				e.preventDefault();
+
+				let nombre = listaFotos.nombre;
+
+				let foto = {
+
+					nombre: nombre
+
+				};
+
+				enviarFotos(foto);
+
+
+			});
+
+			*/
+
+			let body = document.body;
+
+			let p = document.getElementById("p");
+
+			body.addEventListener("click", (e) => {
+
+				e.preventDefault();
+				p.innerHTML = "No sirve de nada pulsar ahi";
+				p.style.fontWeight = "bold";
+
+				setTimeout(() => (
+					p.innerHTML = "Pulsa F1 para ordenar por nombre las fotos",
+					p.style.fontWeight = "normal"
+				), 2000)
+
+			});
+			
+			//Tabla
+
+			for (let i = 0; i < listaFotos.length; i++) {
+
+				console.log("entra");
+				let tr = document.createElement("tr");
+
+				for (let i = 0; i < listaFotos.length; i++) {
+
+					for (let elemento of listaFotos) {
+						
+					
+					console.log("entra aqui");
+					
+					let nodoImagen = document.createElement("td");
+					let imagen = document.createElement("img");
+					imagen.src = `${elemento.nombre}.${elemento.tipo}`;
+					nodoImagen.appendChild(imagen);
+					console.log(imagen);
+
+					let nombre = document.createElement("td");
+					nombre.innerHTML = `${elemento.nombre}`;
+					console.log(nombre);
+
+					tr.appendChild(imagen);
+					tr.appendChild(nombre);
+					
+				}
+
+				}
+
+				tabla.appendChild(tr);
+
+			}
+
+
+			destino.appendChild(tabla);
+
+
+			document.addEventListener("keydown", (e) => {
+
+				e.preventDefault();
+
+				if (keycode === "F1") {
+
+					console.log("hola");
+					alert("hola");
+
+				}
+
+
+			});
+
+			async function enviarFotos(foto) {
+
+				try {
+
+					let respuesta = await fetch("http://localhost:3000/datosFotos", {
+
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(foto)
+
+					});
+
+					if (!respuesta.ok) {
+
+						throw new Error("Errorrrrr");
+
+					}
+
+					let fotoNombre = await respuesta.json();
+					console.log(fotoNombre);
+					alert("Nombre de imagen enviado correctamente.");
+
+				}
+
+				catch (error) {
+
+					console.log("Erorr, algo has liao");
+
+				}
+
+
+			}
+
+
+
+		})
+
+
+	</script>
+</body>
+
+</html>

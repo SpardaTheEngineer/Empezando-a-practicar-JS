@@ -3,9 +3,7 @@ window.addEventListener('load', () => {
 
     let formulario = document.getElementById("formulario");
 
-   
-
-    formulario.addEventListener('submit', function(event) {
+    formulario.addEventListener('submit', (event) => {
 
         event.preventDefault();
         validarFormulario(); 
@@ -47,14 +45,14 @@ window.addEventListener('load', () => {
             },
             body: JSON.stringify(usu)
         })
-        .then(res => {
+        .then(respuesta => {
 
-            return res.json();
+            return respuesta.json();
 
         })
         .then(data => {
 
-            alert("Uusario guardao");
+            alert("Usario guardao");
 
         })
         .catch(err => {

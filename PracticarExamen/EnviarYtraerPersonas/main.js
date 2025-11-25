@@ -82,7 +82,8 @@ window.addEventListener("load", () => {
                </thead>
             </table>
 
-        `
+        `;
+        
         pintarUsuarios();
 
         
@@ -124,6 +125,7 @@ window.addEventListener("load", () => {
 
             let personas = await respuesta.json();
             console.log(personas);
+            alert("Usuario enviado correctamente.");
       
         }
 
