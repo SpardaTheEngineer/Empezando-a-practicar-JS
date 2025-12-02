@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Te pillo, te pillo</p>
+
+<script>
+
+    document.addEventListener("mousemove", function(ev){
+
+        let acosador = document.querySelector("p")[0];
+
+         let cordenadas = (`screenX:${ev.screenX}, screenY:${ev.screenY}\n` + 
+                    `clientX:${ev.clientX}, clientY:${ev.clientY}\n` + 
+                    `pageX:${ev.pageX}, pageY:${ev.pageY}`);
+
+        })
+
+       let mostrarcordenadas = document.createTextNode(cordenadas);
+
+       let nuevoparrafo = document.createElement("p");
+
+       nuevoparrafo.appendChild(mostrarcordenadas);
+
+       document.body.appendChild(nuevoparrafo);
+
+    
+
+
+</script>
+
+</body>
+</html>
